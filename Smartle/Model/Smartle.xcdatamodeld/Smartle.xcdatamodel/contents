@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17D102" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Main" representedClassName="Main" syncable="YES">
+        <attribute name="chosenLanguage" attributeType="String" syncable="YES"/>
+        <attribute name="favoritesItems" attributeType="Transformable" customClassName="[Data]" syncable="YES"/>
+        <attribute name="favoritesLanguages" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
+        <attribute name="items" attributeType="Transformable" customClassName="[Data]" syncable="YES"/>
+        <attribute name="languages" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
+    </entity>
+    <entity name="Revision" representedClassName="Revision" syncable="YES">
+        <attribute name="currentTranslation" attributeType="String" syncable="YES"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="favoritesItems" attributeType="Transformable" customClassName="[Data]" syncable="YES"/>
+        <attribute name="favoritesLanguages" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
+        <attribute name="items" attributeType="Transformable" customClassName="[Data]" syncable="YES"/>
+        <attribute name="languages" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
+        <attribute name="originalTranslation" attributeType="String" syncable="YES"/>
+        <attribute name="photo" attributeType="Binary" syncable="YES"/>
+        <attribute name="selectedLanguage" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Main" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Revision" positionX="-54" positionY="-9" width="128" height="180"/>
+    </elements>
+</model>

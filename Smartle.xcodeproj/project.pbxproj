@@ -1,0 +1,701 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		81002DC5204ED4D100DD87F2 /* LondrinaSolid-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 81002DC0204BEECF00DD87F2 /* LondrinaSolid-Regular.otf */; };
+		81243AEB203FFA8600123AF0 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81243AEA203FFA8600123AF0 /* Countries.swift */; };
+		812C4E77204BE3E70007378B /* RevisionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C4E76204BE3E70007378B /* RevisionCell.swift */; };
+		812CC21720359861005AE3B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812CC21620359861005AE3B0 /* AppDelegate.swift */; };
+		812CC21C20359861005AE3B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 812CC21A20359861005AE3B0 /* Main.storyboard */; };
+		812CC22120359861005AE3B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 812CC22020359861005AE3B0 /* Assets.xcassets */; };
+		812CC22420359861005AE3B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 812CC22220359861005AE3B0 /* LaunchScreen.storyboard */; };
+		812CC22F20359862005AE3B0 /* SmartTranslateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812CC22E20359862005AE3B0 /* SmartTranslateUITests.swift */; };
+		813EFEAF203713D70021FC49 /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813EFEAE203713D70021FC49 /* Translation.swift */; };
+		814C44B920583167007E813F /* FavoritesVCFlagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C44B820583167007E813F /* FavoritesVCFlagCell.swift */; };
+		8188720D20401DDD0066691D /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8188720C20401DDD0066691D /* Helpers.swift */; };
+		818872132040474B0066691D /* CameraVCFlagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818872112040474B0066691D /* CameraVCFlagCell.swift */; };
+		818872142040474B0066691D /* CameraVCFlagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 818872122040474B0066691D /* CameraVCFlagCell.xib */; };
+		81887217204047EF0066691D /* PhotosVCFlagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81887215204047EF0066691D /* PhotosVCFlagCell.swift */; };
+		81887218204047EF0066691D /* PhotosVCFlagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81887216204047EF0066691D /* PhotosVCFlagCell.xib */; };
+		81A09B68217D1DE2006FEB0C /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A09B67217D1DE2006FEB0C /* Animator.swift */; };
+		81AD6C0A206F5ADD0081708A /* RevisionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AD6C09206F5ADD0081708A /* RevisionsList.swift */; };
+		81ADD4D9203C30450073AC54 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ADD4D8203C30450073AC54 /* CameraViewController.swift */; };
+		81ADD4DB203C31410073AC54 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ADD4DA203C31410073AC54 /* PhotosViewController.swift */; };
+		81ADD4DD203C31590073AC54 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ADD4DC203C31590073AC54 /* FavoritesViewController.swift */; };
+		81ADD4DF203C5A590073AC54 /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ADD4DE203C5A590073AC54 /* PhotosCell.swift */; };
+		81ADD4E3203C7D030073AC54 /* ProcessingImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ADD4E2203C7D030073AC54 /* ProcessingImage.swift */; };
+		81F1C6BC206A95A60027D2E7 /* Smartle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C6BA206A95A60027D2E7 /* Smartle.xcdatamodeld */; };
+		81F1C6C1206A99110027D2E7 /* Main+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C6BD206A99110027D2E7 /* Main+CoreDataClass.swift */; };
+		81F1C6C2206A99110027D2E7 /* Main+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C6BE206A99110027D2E7 /* Main+CoreDataProperties.swift */; };
+		81F1C6C3206A99110027D2E7 /* Revision+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C6BF206A99110027D2E7 /* Revision+CoreDataClass.swift */; };
+		81F1C6C4206A99110027D2E7 /* Revision+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C6C0206A99110027D2E7 /* Revision+CoreDataProperties.swift */; };
+		81F1C6C8206B89470027D2E7 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C6C7206B89470027D2E7 /* Resnet50.mlmodel */; };
+		BA8EAC78E1434E6D9DE0E44F /* Pods_Smartle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FEF9D345DA9036C9819DB44 /* Pods_Smartle.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		812CC22B20359862005AE3B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 812CC20B20359861005AE3B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 812CC21220359861005AE3B0;
+			remoteInfo = SmartTranslate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1FEF9D345DA9036C9819DB44 /* Pods_Smartle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smartle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34DAB05B5549F381855C0DEE /* Pods-Smartle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smartle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smartle/Pods-Smartle.release.xcconfig"; sourceTree = "<group>"; };
+		7F58CF425485DC6936CC5FB3 /* Pods-Smartle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smartle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smartle/Pods-Smartle.debug.xcconfig"; sourceTree = "<group>"; };
+		81002DC0204BEECF00DD87F2 /* LondrinaSolid-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "LondrinaSolid-Regular.otf"; path = "Design/londrina/LondrinaSolid-Regular.otf"; sourceTree = SOURCE_ROOT; };
+		81243AEA203FFA8600123AF0 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		812C4E76204BE3E70007378B /* RevisionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionCell.swift; sourceTree = "<group>"; };
+		812CC21320359861005AE3B0 /* Smartle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smartle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		812CC21620359861005AE3B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		812CC21B20359861005AE3B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		812CC22020359861005AE3B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		812CC22320359861005AE3B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		812CC22520359862005AE3B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		812CC22A20359862005AE3B0 /* SmartleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		812CC22E20359862005AE3B0 /* SmartTranslateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartTranslateUITests.swift; sourceTree = "<group>"; };
+		812CC23020359862005AE3B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		813EFEAB203711D20021FC49 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		813EFEAE203713D70021FC49 /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
+		814C44B820583167007E813F /* FavoritesVCFlagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVCFlagCell.swift; sourceTree = "<group>"; };
+		8188720C20401DDD0066691D /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		818872112040474B0066691D /* CameraVCFlagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVCFlagCell.swift; sourceTree = "<group>"; };
+		818872122040474B0066691D /* CameraVCFlagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraVCFlagCell.xib; sourceTree = "<group>"; };
+		81887215204047EF0066691D /* PhotosVCFlagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosVCFlagCell.swift; sourceTree = "<group>"; };
+		81887216204047EF0066691D /* PhotosVCFlagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosVCFlagCell.xib; sourceTree = "<group>"; };
+		81A09B67217D1DE2006FEB0C /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		81AD6C09206F5ADD0081708A /* RevisionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionsList.swift; sourceTree = "<group>"; };
+		81ADD4D8203C30450073AC54 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		81ADD4DA203C31410073AC54 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		81ADD4DC203C31590073AC54 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		81ADD4DE203C5A590073AC54 /* PhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCell.swift; sourceTree = "<group>"; };
+		81ADD4E2203C7D030073AC54 /* ProcessingImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingImage.swift; sourceTree = "<group>"; };
+		81F1C6BB206A95A60027D2E7 /* Smartle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Smartle.xcdatamodel; sourceTree = "<group>"; };
+		81F1C6BD206A99110027D2E7 /* Main+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main+CoreDataClass.swift"; sourceTree = "<group>"; };
+		81F1C6BE206A99110027D2E7 /* Main+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		81F1C6BF206A99110027D2E7 /* Revision+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Revision+CoreDataClass.swift"; sourceTree = "<group>"; };
+		81F1C6C0206A99110027D2E7 /* Revision+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Revision+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		81F1C6C7206B89470027D2E7 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		812CC21020359861005AE3B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA8EAC78E1434E6D9DE0E44F /* Pods_Smartle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		812CC22720359862005AE3B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F522121E22BAAA708F536C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F58CF425485DC6936CC5FB3 /* Pods-Smartle.debug.xcconfig */,
+				34DAB05B5549F381855C0DEE /* Pods-Smartle.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		812CC20A20359861005AE3B0 = {
+			isa = PBXGroup;
+			children = (
+				812CC21520359861005AE3B0 /* Smartle */,
+				812CC22D20359862005AE3B0 /* SmartleUITests */,
+				812CC21420359861005AE3B0 /* Products */,
+				813EFEAA203711D10021FC49 /* Frameworks */,
+				2F522121E22BAAA708F536C9 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		812CC21420359861005AE3B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				812CC21320359861005AE3B0 /* Smartle.app */,
+				812CC22A20359862005AE3B0 /* SmartleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		812CC21520359861005AE3B0 /* Smartle */ = {
+			isa = PBXGroup;
+			children = (
+				813EFEA72036CBB20021FC49 /* Supporting Files */,
+				81ADD4E4203EABB90073AC54 /* Model */,
+				81ADD4E6203EABC90073AC54 /* View */,
+				81ADD4E5203EABC00073AC54 /* Controller */,
+				8188720E20401DE60066691D /* Helpers */,
+			);
+			path = Smartle;
+			sourceTree = "<group>";
+		};
+		812CC22D20359862005AE3B0 /* SmartleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				812CC22E20359862005AE3B0 /* SmartTranslateUITests.swift */,
+				812CC23020359862005AE3B0 /* Info.plist */,
+			);
+			path = SmartleUITests;
+			sourceTree = "<group>";
+		};
+		813EFEA72036CBB20021FC49 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				812CC21620359861005AE3B0 /* AppDelegate.swift */,
+				81A09B67217D1DE2006FEB0C /* Animator.swift */,
+				812CC22020359861005AE3B0 /* Assets.xcassets */,
+				81002DC0204BEECF00DD87F2 /* LondrinaSolid-Regular.otf */,
+				812CC22220359861005AE3B0 /* LaunchScreen.storyboard */,
+				812CC22520359862005AE3B0 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		813EFEAA203711D10021FC49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				813EFEAB203711D20021FC49 /* Alamofire.framework */,
+				1FEF9D345DA9036C9819DB44 /* Pods_Smartle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8188720E20401DE60066691D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8188720C20401DDD0066691D /* Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		81ADD4E4203EABB90073AC54 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				81ADD4E2203C7D030073AC54 /* ProcessingImage.swift */,
+				81F1C6BA206A95A60027D2E7 /* Smartle.xcdatamodeld */,
+				81F1C6C7206B89470027D2E7 /* Resnet50.mlmodel */,
+				813EFEAE203713D70021FC49 /* Translation.swift */,
+				81243AEA203FFA8600123AF0 /* Countries.swift */,
+				81F1C6BD206A99110027D2E7 /* Main+CoreDataClass.swift */,
+				81F1C6BE206A99110027D2E7 /* Main+CoreDataProperties.swift */,
+				81F1C6BF206A99110027D2E7 /* Revision+CoreDataClass.swift */,
+				81F1C6C0206A99110027D2E7 /* Revision+CoreDataProperties.swift */,
+				81AD6C09206F5ADD0081708A /* RevisionsList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		81ADD4E5203EABC00073AC54 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				81ADD4D8203C30450073AC54 /* CameraViewController.swift */,
+				81ADD4DA203C31410073AC54 /* PhotosViewController.swift */,
+				81ADD4DC203C31590073AC54 /* FavoritesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		81ADD4E6203EABC90073AC54 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				812CC21A20359861005AE3B0 /* Main.storyboard */,
+				81ADD4DE203C5A590073AC54 /* PhotosCell.swift */,
+				81887215204047EF0066691D /* PhotosVCFlagCell.swift */,
+				81887216204047EF0066691D /* PhotosVCFlagCell.xib */,
+				818872112040474B0066691D /* CameraVCFlagCell.swift */,
+				818872122040474B0066691D /* CameraVCFlagCell.xib */,
+				814C44B820583167007E813F /* FavoritesVCFlagCell.swift */,
+				812C4E76204BE3E70007378B /* RevisionCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		812CC21220359861005AE3B0 /* Smartle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 812CC23320359862005AE3B0 /* Build configuration list for PBXNativeTarget "Smartle" */;
+			buildPhases = (
+				3C4A539483CD60B0868D2CB2 /* [CP] Check Pods Manifest.lock */,
+				812CC20F20359861005AE3B0 /* Sources */,
+				812CC21020359861005AE3B0 /* Frameworks */,
+				812CC21120359861005AE3B0 /* Resources */,
+				813EFEAD203711FA0021FC49 /* ShellScript */,
+				C9411C1A636CC20BD7E666B2 /* [CP] Embed Pods Frameworks */,
+				94CCAC6159D3E44472626AAE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Smartle;
+			productName = SmartTranslate;
+			productReference = 812CC21320359861005AE3B0 /* Smartle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		812CC22920359862005AE3B0 /* SmartleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 812CC23620359862005AE3B0 /* Build configuration list for PBXNativeTarget "SmartleUITests" */;
+			buildPhases = (
+				812CC22620359862005AE3B0 /* Sources */,
+				812CC22720359862005AE3B0 /* Frameworks */,
+				812CC22820359862005AE3B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				812CC22C20359862005AE3B0 /* PBXTargetDependency */,
+			);
+			name = SmartleUITests;
+			productName = SmartTranslateUITests;
+			productReference = 812CC22A20359862005AE3B0 /* SmartleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		812CC20B20359861005AE3B0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = jullianm;
+				TargetAttributes = {
+					812CC21220359861005AE3B0 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Manual;
+					};
+					812CC22920359862005AE3B0 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 812CC21220359861005AE3B0;
+					};
+				};
+			};
+			buildConfigurationList = 812CC20E20359861005AE3B0 /* Build configuration list for PBXProject "Smartle" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 812CC20A20359861005AE3B0;
+			productRefGroup = 812CC21420359861005AE3B0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				812CC21220359861005AE3B0 /* Smartle */,
+				812CC22920359862005AE3B0 /* SmartleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		812CC21120359861005AE3B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				812CC22420359861005AE3B0 /* LaunchScreen.storyboard in Resources */,
+				81002DC5204ED4D100DD87F2 /* LondrinaSolid-Regular.otf in Resources */,
+				81887218204047EF0066691D /* PhotosVCFlagCell.xib in Resources */,
+				818872142040474B0066691D /* CameraVCFlagCell.xib in Resources */,
+				812CC22120359861005AE3B0 /* Assets.xcassets in Resources */,
+				812CC21C20359861005AE3B0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		812CC22820359862005AE3B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3C4A539483CD60B0868D2CB2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Smartle-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		813EFEAD203711FA0021FC49 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+				"",
+			);
+			outputPaths = (
+				"",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+		};
+		94CCAC6159D3E44472626AAE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smartle/Pods-Smartle-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9411C1A636CC20BD7E666B2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Smartle/Pods-Smartle-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smartle/Pods-Smartle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		812CC20F20359861005AE3B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81F1C6C2206A99110027D2E7 /* Main+CoreDataProperties.swift in Sources */,
+				812C4E77204BE3E70007378B /* RevisionCell.swift in Sources */,
+				81ADD4DF203C5A590073AC54 /* PhotosCell.swift in Sources */,
+				818872132040474B0066691D /* CameraVCFlagCell.swift in Sources */,
+				81F1C6C3206A99110027D2E7 /* Revision+CoreDataClass.swift in Sources */,
+				81ADD4DD203C31590073AC54 /* FavoritesViewController.swift in Sources */,
+				81887217204047EF0066691D /* PhotosVCFlagCell.swift in Sources */,
+				812CC21720359861005AE3B0 /* AppDelegate.swift in Sources */,
+				81ADD4DB203C31410073AC54 /* PhotosViewController.swift in Sources */,
+				8188720D20401DDD0066691D /* Helpers.swift in Sources */,
+				81F1C6C8206B89470027D2E7 /* Resnet50.mlmodel in Sources */,
+				81F1C6C1206A99110027D2E7 /* Main+CoreDataClass.swift in Sources */,
+				81A09B68217D1DE2006FEB0C /* Animator.swift in Sources */,
+				81AD6C0A206F5ADD0081708A /* RevisionsList.swift in Sources */,
+				81F1C6C4206A99110027D2E7 /* Revision+CoreDataProperties.swift in Sources */,
+				81ADD4E3203C7D030073AC54 /* ProcessingImage.swift in Sources */,
+				81F1C6BC206A95A60027D2E7 /* Smartle.xcdatamodeld in Sources */,
+				813EFEAF203713D70021FC49 /* Translation.swift in Sources */,
+				81243AEB203FFA8600123AF0 /* Countries.swift in Sources */,
+				81ADD4D9203C30450073AC54 /* CameraViewController.swift in Sources */,
+				814C44B920583167007E813F /* FavoritesVCFlagCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		812CC22620359862005AE3B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				812CC22F20359862005AE3B0 /* SmartTranslateUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		812CC22C20359862005AE3B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 812CC21220359861005AE3B0 /* Smartle */;
+			targetProxy = 812CC22B20359862005AE3B0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		812CC21A20359861005AE3B0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				812CC21B20359861005AE3B0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		812CC22220359861005AE3B0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				812CC22320359861005AE3B0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		812CC23120359862005AE3B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		812CC23220359862005AE3B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		812CC23420359862005AE3B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F58CF425485DC6936CC5FB3 /* Pods-Smartle.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 43UT2JSNMP;
+				INFOPLIST_FILE = "$(SRCROOT)/Smartle/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jullianm.Smartle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = SmartleDev;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		812CC23520359862005AE3B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34DAB05B5549F381855C0DEE /* Pods-Smartle.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 43UT2JSNMP;
+				INFOPLIST_FILE = "$(SRCROOT)/Smartle/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jullianm.Smartle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = SmartleUniversal;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		812CC23720359862005AE3B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 43UT2JSNMP;
+				INFOPLIST_FILE = SmartTranslateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jullianm.SmartTranslateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SmartTranslate;
+			};
+			name = Debug;
+		};
+		812CC23820359862005AE3B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 43UT2JSNMP;
+				INFOPLIST_FILE = SmartTranslateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jullianm.SmartTranslateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SmartTranslate;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		812CC20E20359861005AE3B0 /* Build configuration list for PBXProject "Smartle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				812CC23120359862005AE3B0 /* Debug */,
+				812CC23220359862005AE3B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		812CC23320359862005AE3B0 /* Build configuration list for PBXNativeTarget "Smartle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				812CC23420359862005AE3B0 /* Debug */,
+				812CC23520359862005AE3B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		812CC23620359862005AE3B0 /* Build configuration list for PBXNativeTarget "SmartleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				812CC23720359862005AE3B0 /* Debug */,
+				812CC23820359862005AE3B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		81F1C6BA206A95A60027D2E7 /* Smartle.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				81F1C6BB206A95A60027D2E7 /* Smartle.xcdatamodel */,
+			);
+			currentVersion = 81F1C6BB206A95A60027D2E7 /* Smartle.xcdatamodel */;
+			path = Smartle.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 812CC20B20359861005AE3B0 /* Project object */;
+}
