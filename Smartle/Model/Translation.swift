@@ -14,7 +14,7 @@ class Translation {
         
         let APIKey = ""
         
-        guard let url = URL(string: "https://translation.googleapis.com/language/translate/v2") else { return }
+        guard let url = URL(string: "YOUR_API_KEY") else { return }
         
         let parameters: Parameters = [
             "q": textToTranslate,
