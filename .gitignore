@@ -13,6 +13,13 @@
 build/
 DerivedData/
 
+Pods/.DS_Store
+.DS_Store
+Design/
+Smartle_AppPreview.mp4
+ScreensAppstore/
+
+
 ## Various settings
 *.pbxuser
 !default.pbxuser

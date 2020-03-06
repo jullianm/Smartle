@@ -5,7 +5,6 @@
 //  Created by jullianm on 15/02/2018.
 //  Copyright © 2018 jullianm. All rights reserved.
 //
-
 import UIKit
 import CoreData
 
@@ -14,20 +13,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
 
     var window: UIWindow?
     var tabBarController: UITabBarController!
-    let animator = Animator()
+//    let animator = Animator()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         tabBarController = self.window!.rootViewController as? UITabBarController
         tabBarController.delegate = self
-        animator.tbc = tabBarController
-        let sep = UIScreenEdgePanGestureRecognizer(target:self, action:#selector(pan))
-        sep.edges = UIRectEdge.right
-        tabBarController.view.addGestureRecognizer(sep)
-        sep.delegate = self
-        let sep2 = UIScreenEdgePanGestureRecognizer(target:self, action:#selector(pan))
-        sep2.edges = UIRectEdge.left
-        tabBarController.view.addGestureRecognizer(sep2)
-        sep2.delegate = self
+//        animator.tbc = tabBarController
+//        let sep = UIScreenEdgePanGestureRecognizer(target:self, action:#selector(pan))
+//        sep.edges = UIRectEdge.right
+//        tabBarController.view.addGestureRecognizer(sep)
+//        sep.delegate = self
+//        let sep2 = UIScreenEdgePanGestureRecognizer(target:self, action:#selector(pan))
+//        sep2.edges = UIRectEdge.left
+//        tabBarController.view.addGestureRecognizer(sep2)
+//        sep2.delegate = self
         
         let cameraVC = tabBarController.viewControllers![0] as! CameraViewController
         let photosVC = tabBarController.viewControllers![1] as! PhotosViewController
@@ -39,56 +38,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         photosVC.entity = NSEntityDescription.entity(forEntityName: "Revision", in: persistentContainer.viewContext)
         favoritesVC.managedObjectContext = persistentContainer.viewContext
         favoritesVC.entity = NSEntityDescription.entity(forEntityName: "Revision", in: persistentContainer.viewContext)
+        
         return true
 
     }
-    @objc func pan(_ g:UIScreenEdgePanGestureRecognizer) {
-        switch g.state {
-        case .began:
-            animator.interacting = true
-            let tbc = self.window!.rootViewController as! UITabBarController
-            if g.edges == .right {
-                tbc.selectedIndex = tbc.selectedIndex + 1
-            } else {
-                tbc.selectedIndex = tbc.selectedIndex - 1
-            }
-        case .changed:
-            let v = g.view!
-            let delta = g.translation(in:v)
-            let percent = abs(delta.x/v.bounds.size.width)
-            animator.anim?.fractionComplete = percent
-            animator.context?.updateInteractiveTransition(percent)
-        case .ended:
-            let anim = animator.anim as! UIViewPropertyAnimator
-            anim.pauseAnimation()
-            if anim.fractionComplete < 0.5 {
-                anim.isReversed = true
-            }
-            anim.continueAnimation(
-                withTimingParameters:
-                UICubicTimingParameters(animationCurve: .linear),
-                durationFactor: 0.2)
-            anim.addCompletion { finish in
-                if finish == .end {
-                    self.animator.context?.finishInteractiveTransition()
-                    self.animator.context?.completeTransition(true)
-                } else {
-                    self.animator.context?.cancelInteractiveTransition()
-                    self.animator.context?.completeTransition(false)
-                }
-            }
-        default:
-            break
-        }
-    }
-    func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return animator
-    }
-    func tabBarController(_ tabBarController: UITabBarController,
-                          interactionControllerFor ac: UIViewControllerAnimatedTransitioning)
-        -> UIViewControllerInteractiveTransitioning? {
-            return animator.interacting ? animator : nil
-    }
+//    @objc func pan(_ g:UIScreenEdgePanGestureRecognizer) {
+//        switch g.state {
+//        case .began:
+//            animator.interacting = true
+//            let tbc = self.window!.rootViewController as! UITabBarController
+//            if g.edges == .right {
+//                tbc.selectedIndex = tbc.selectedIndex + 1
+//            } else {
+//                tbc.selectedIndex = tbc.selectedIndex - 1
+//            }
+//        case .changed:
+//            let v = g.view!
+//            let delta = g.translation(in:v)
+//            let percent = abs(delta.x/v.bounds.size.width)
+//            animator.anim?.fractionComplete = percent
+//            animator.context?.updateInteractiveTransition(percent)
+//        case .ended:
+//            let anim = animator.anim as! UIViewPropertyAnimator
+//            anim.pauseAnimation()
+//            if anim.fractionComplete < 0.5 {
+//                anim.isReversed = true
+//            }
+//            anim.continueAnimation(
+//                withTimingParameters:
+//                UICubicTimingParameters(animationCurve: .linear),
+//                durationFactor: 0.2)
+//            anim.addCompletion { finish in
+//                if finish == .end {
+//                    self.animator.context?.finishInteractiveTransition()
+//                    self.animator.context?.completeTransition(true)
+//                } else {
+//                    self.animator.context?.cancelInteractiveTransition()
+//                    self.animator.context?.completeTransition(false)
+//                }
+//            }
+//        default:
+//            break
+//        }
+//    }
+//    func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        return animator
+//    }
+//    func tabBarController(_ tabBarController: UITabBarController,
+//                          interactionControllerFor ac: UIViewControllerAnimatedTransitioning)
+//        -> UIViewControllerInteractiveTransitioning? {
+//            return animator.interacting ? animator : nil
+//    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,15 +17,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smartle_logo" translatesAutoresizingMaskIntoConstraints="NO" id="qHh-05-deM">
-                                <rect key="frame" x="93.666666666666671" y="271.66666666666663" width="187.66666666666663" height="278.66666666666663"/>
+                                <rect key="frame" x="87.666666666666686" y="281" width="200" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="3ZM-72-ZNq"/>
+                                    <constraint firstAttribute="height" constant="260" id="9N2-hy-NMG"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274509803915" green="0.71764705882352942" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="qHh-05-deM" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.5" id="9H4-Ed-mBO"/>
                             <constraint firstItem="qHh-05-deM" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="BgE-GO-1bZ"/>
                             <constraint firstItem="qHh-05-deM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="KUw-ux-r8W"/>
-                            <constraint firstItem="qHh-05-deM" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.38" id="Ue0-tP-uvD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -39,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="smartle_logo" width="127" height="186"/>
+        <image name="smartle_logo" width="127.33333587646484" height="186.33332824707031"/>
     </resources>
 </document>

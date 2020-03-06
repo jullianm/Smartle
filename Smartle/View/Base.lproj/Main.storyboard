@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KsK-8M-ZB2">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KsK-8M-ZB2">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -53,10 +50,10 @@
                                 <viewLayoutGuide key="safeArea" id="KnX-Nh-oHh"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8qo-0O-MSg">
-                                <rect key="frame" x="0.0" y="94" width="375" height="635"/>
+                                <rect key="frame" x="0.0" y="94.666666666666686" width="375" height="634.33333333333326"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9u-Dg-Ywq">
-                                <rect key="frame" x="10" y="94" width="187.66666666666666" height="110"/>
+                                <rect key="frame" x="10" y="94.666666666666686" width="187.66666666666666" height="110"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="smartle_bubble" translatesAutoresizingMaskIntoConstraints="NO" id="tZh-qh-8Zh">
                                         <rect key="frame" x="0.0" y="0.0" width="189" height="110"/>
@@ -111,7 +108,7 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confidence" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zF-yT-WWS">
-                                <rect key="frame" x="60" y="663.33333333333337" width="93" height="17"/>
+                                <rect key="frame" x="59.000000000000007" y="663.66666666666663" width="93.666666666666686" height="17"/>
                                 <fontDescription key="fontDescription" name="LondrinaSolid-Regular" family="Londrina Solid" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -167,7 +164,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="0.95666110710516272" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" red="0.95692783589999997" green="0.71791678670000003" blue="0.36174017190000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.95686274509803915" green="0.71764705882352942" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="mKX-Jm-fUS"/>
@@ -224,11 +222,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="119"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dhi-IV-wnn" id="XXw-qX-NT4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="118.66666666666667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVo-fM-E0h">
-                                                    <rect key="frame" x="261" y="29.666666666666668" width="80" height="59.333333333333329"/>
+                                                    <rect key="frame" x="261" y="29.666666666666668" width="80" height="59.666666666666657"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="VQc-bh-nA4"/>
                                                     </constraints>
@@ -241,7 +239,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Label" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xk9-O6-4Ej">
-                                                    <rect key="frame" x="107.66666666666669" y="42" width="151" height="35"/>
+                                                    <rect key="frame" x="107.66666666666667" y="41.333333333333329" width="150.66666666666663" height="36.333333333333329"/>
                                                     <color key="backgroundColor" red="0.95692783589999997" green="0.71791678670000003" blue="0.36174017190000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="LondrinaSolid-Regular" family="Londrina Solid" pointSize="30"/>
@@ -298,7 +296,7 @@
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teX-eb-4rF">
-                                                    <rect key="frame" x="341" y="45" width="30" height="30"/>
+                                                    <rect key="frame" x="341" y="44.666666666666664" width="30" height="29.999999999999993"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="AUo-dK-EeQ"/>
                                                         <constraint firstAttribute="width" secondItem="teX-eb-4rF" secondAttribute="height" multiplier="1:1" id="YMT-Jn-FEt"/>
@@ -342,7 +340,7 @@
                                 </prototypes>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Hwr-5S-L33">
-                                <rect key="frame" x="169.66666666666666" y="393" width="37" height="37"/>
+                                <rect key="frame" x="169" y="393.33333333333331" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.95692783589999997" green="0.71791678670000003" blue="0.36174017190000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -409,7 +407,7 @@
                                 <viewLayoutGuide key="safeArea" id="cSZ-tS-cxS"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lgA-ve-lKc">
-                                <rect key="frame" x="0.0" y="94" width="375" height="309.66666666666669"/>
+                                <rect key="frame" x="0.0" y="94.666666666666657" width="375" height="309.66666666666674"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pj2-h3-w3k">
                                 <rect key="frame" x="0.0" y="404.33333333333326" width="375" height="324.66666666666674"/>
@@ -442,7 +440,7 @@
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPH-bc-XJg">
-                                <rect key="frame" x="10" y="94" width="187.66666666666666" height="110"/>
+                                <rect key="frame" x="10" y="94.666666666666686" width="187.66666666666666" height="110"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="smartle_bubble" translatesAutoresizingMaskIntoConstraints="NO" id="RTW-r9-bdj">
                                         <rect key="frame" x="0.0" y="0.0" width="189" height="110"/>
@@ -490,7 +488,7 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confidence" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJm-N4-b6N">
-                                <rect key="frame" x="59" y="337" width="93" height="20"/>
+                                <rect key="frame" x="59.000000000000007" y="337.33333333333331" width="93.666666666666686" height="20"/>
                                 <fontDescription key="fontDescription" name="LondrinaSolid-Regular" family="Londrina Solid" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -554,8 +552,8 @@
         <image name="smartle_bubble" width="250" height="116"/>
         <image name="smartle_favorites" width="23" height="20"/>
         <image name="smartle_favoritesEmpty" width="23" height="20"/>
-        <image name="smartle_logo" width="127" height="186"/>
-        <image name="smartle_photos" width="23" height="19"/>
+        <image name="smartle_logo" width="127.33333587646484" height="186.33332824707031"/>
+        <image name="smartle_photos" width="23.333333969116211" height="19"/>
         <image name="smartle_record" width="23" height="23"/>
     </resources>
 </document>

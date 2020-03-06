@@ -14,28 +14,34 @@ class Translation {
         
         let APIKey = ""
         
-        guard let url = URL(string: "https://translation.googleapis.com/language/translate/v2?key=\(APIKey)") else { return }
+        guard let url = URL(string: "https://translation.googleapis.com/language/translate/v2") else { return }
         
-        let parameters: Parameters = ["q": textToTranslate, "target": "\(language)", "format": "text"]        
+        let parameters: Parameters = [
+            "q": textToTranslate,
+            "target": "\(language)",
+            "format": "text",
+            "key": APIKey
+        ]
+        
         DispatchQueue.global(qos: .userInteractive).async {
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { response in
-
-            if let result = response.result.value {
-                let myJson = result as! NSDictionary
-                if let data = myJson["data"] as? NSDictionary {
-                    if let translations = data["translations"] as? NSArray {
-                        if let translationsArray = translations[0] as? NSDictionary {
-                            if let text = translationsArray["translatedText"] as? String {
-                                let translatedText = text.capitalizingFirstLetter()
-                                DispatchQueue.main.async {
-                                           completion(translatedText)
+            Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { response in
+                
+                if let result = response.result.value {
+                    let myJson = result as! NSDictionary
+                    if let data = myJson["data"] as? NSDictionary {
+                        if let translations = data["translations"] as? NSArray {
+                            if let translationsArray = translations[0] as? NSDictionary {
+                                if let text = translationsArray["translatedText"] as? String {
+                                    let translatedText = text.capitalizingFirstLetter()
+                                    DispatchQueue.main.async {
+                                        completion(translatedText)
+                                    }
                                 }
                             }
                         }
                     }
                 }
             }
-        }
     }
     }
 }

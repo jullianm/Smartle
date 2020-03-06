@@ -55,7 +55,7 @@ class PhotosViewController: UIViewController, UIApplicationDelegate {
         languagePicker.delegate = self
         languagePicker.dataSource = self
         PHPhotoLibrary.shared().register(self)
-        options.deliveryMode = .highQualityFormat
+        options.deliveryMode = .opportunistic
         options.resizeMode = .exact
         tabBarItem.selectedImage = tabBarItem.selectedImage?.withRenderingMode(.automatic)
         let rotationAngle: CGFloat = -90 * (.pi/180)
@@ -134,8 +134,13 @@ class PhotosViewController: UIViewController, UIApplicationDelegate {
             self.thumbnailsAssets.append(asset)
         }
         cachingImageManager.startCachingImages(for: thumbnailsAssets, targetSize: CGSize(width: 300, height: 300), contentMode: .aspectFill, options: options)
+        
         if PHPhotoLibrary.authorizationStatus() == .authorized {
+            let options = PHImageRequestOptions()
+            options.deliveryMode = .opportunistic
+            options.resizeMode = .none
             PHImageManager.default().requestImage(for: galleryAssets[IndexPath(item: 0, section: 0).item], targetSize: PHImageManagerMaximumSize, contentMode: .aspectFill, options: options) { result, info in
+                
                 guard let result = result else { return }
                 self.previewImage.image = self.sizedImage(image: result, frame: self.previewImage.frame)
                 self.photo = result
@@ -307,6 +312,11 @@ extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSo
                 let cell = collectionView.cellForItem(at: indexPath) as! PhotosCell
                 cell.alpha = 0.3
                 itemIndexPath = indexPath.item
+                
+                let options = PHImageRequestOptions()
+                options.deliveryMode = .opportunistic
+                options.resizeMode = .none
+                
                 PHImageManager.default().requestImage(for: galleryAssets[indexPath.item], targetSize: PHImageManagerMaximumSize, contentMode: .aspectFill, options: options) { result, info in
                     guard let result = result else { return }
                     self.previewImage.image = self.sizedImage(image: result, frame: self.previewImage.frame)

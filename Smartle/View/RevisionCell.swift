@@ -36,7 +36,7 @@ class RevisionCell: UITableViewCell {
         }
     }
     var selectedRow: Int!
-    var tableView: UITableView!
+    var tableView: UITableView?
     var lastCellPosition: IndexPath!
     var uppestCellPosition: IndexPath!
     lazy var favoritesItems = [UIImage]()
@@ -77,7 +77,7 @@ class RevisionCell: UITableViewCell {
         languagePicker.transform = CGAffineTransform(rotationAngle: rotationAngle)
         languagePicker.frame = CGRect(x: x, y: y, width: width, height: height)
         selectedRow = languagePicker.selectedRow(inComponent: 0)
-        tableView = self.superview as! UITableView
+        tableView = self.superview as? UITableView
     }
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -218,26 +218,30 @@ extension RevisionCell: UITextFieldDelegate {
         isBeingEdited = true
         guard let currentCellIndexPath = currentCellPosition else { return }
         lastCellPosition = currentCellIndexPath
-        guard let uppestCell = tableView.visibleCells.first else { return }
-        guard let uppestCellIndexPath = tableView.indexPath(for: uppestCell) else { return }
+        guard let uppestCell = tableView?.visibleCells.first else { return }
+        guard let uppestCellIndexPath = tableView?.indexPath(for: uppestCell) else { return }
         uppestCellPosition = uppestCellIndexPath
-        tableView.moveRow(at: currentCellIndexPath, to: uppestCellPosition)
-        tableView.scrollToRow(at: uppestCellPosition, at: .none, animated: false)
-        for visibleCell in tableView.visibleCells {
-            let visibleCellIndexPath = tableView.indexPath(for: visibleCell)
-            if visibleCellIndexPath != uppestCellPosition {
-                visibleCell.alpha = 0.3
-                visibleCell.isUserInteractionEnabled = false
+        tableView?.moveRow(at: currentCellIndexPath, to: uppestCellPosition)
+        tableView?.scrollToRow(at: uppestCellPosition, at: .none, animated: false)
+        if let tableView = tableView {
+            for visibleCell in tableView.visibleCells {
+                let visibleCellIndexPath = tableView.indexPath(for: visibleCell)
+                if visibleCellIndexPath != uppestCellPosition {
+                    visibleCell.alpha = 0.3
+                    visibleCell.isUserInteractionEnabled = false
+                }
             }
         }
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         isBeingEdited = false
-        tableView.moveRow(at: uppestCellPosition, to: lastCellPosition)
-        tableView.scrollToRow(at: lastCellPosition, at: .none, animated: false)
-        for visibleCell in tableView.visibleCells {
-            visibleCell.isUserInteractionEnabled = true
-            visibleCell.alpha = 1
+        tableView?.moveRow(at: uppestCellPosition, to: lastCellPosition)
+        tableView?.scrollToRow(at: lastCellPosition, at: .none, animated: false)
+        if let tableView = tableView {
+            for visibleCell in tableView.visibleCells {
+                visibleCell.isUserInteractionEnabled = true
+                visibleCell.alpha = 1
+            }
         }
         if languagePicker.selectedRow(inComponent: 0) != favoritesItems.count-1 {
             container.alpha = 0
