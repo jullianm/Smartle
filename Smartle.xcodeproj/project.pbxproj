@@ -15,7 +15,6 @@
 		812CC22120359861005AE3B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 812CC22020359861005AE3B0 /* Assets.xcassets */; };
 		812CC22420359861005AE3B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 812CC22220359861005AE3B0 /* LaunchScreen.storyboard */; };
 		812CC22F20359862005AE3B0 /* SmartTranslateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812CC22E20359862005AE3B0 /* SmartTranslateUITests.swift */; };
-		8139ADF0240B97EE00F900F5 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8139ADEF240B97EE00F900F5 /* Resnet50.mlmodel */; };
 		813EFEAF203713D70021FC49 /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813EFEAE203713D70021FC49 /* Translation.swift */; };
 		814C44B920583167007E813F /* FavoritesVCFlagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C44B820583167007E813F /* FavoritesVCFlagCell.swift */; };
 		8188720D20401DDD0066691D /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8188720C20401DDD0066691D /* Helpers.swift */; };
@@ -35,6 +34,7 @@
 		81F1C6C2206A99110027D2E7 /* Main+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C6BE206A99110027D2E7 /* Main+CoreDataProperties.swift */; };
 		81F1C6C3206A99110027D2E7 /* Revision+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C6BF206A99110027D2E7 /* Revision+CoreDataClass.swift */; };
 		81F1C6C4206A99110027D2E7 /* Revision+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C6C0206A99110027D2E7 /* Revision+CoreDataProperties.swift */; };
+		81FCF0EA2412E1F600116116 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 81FCF0E92412E1F600116116 /* Resnet50.mlmodel */; };
 		BA8EAC78E1434E6D9DE0E44F /* Pods_Smartle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FEF9D345DA9036C9819DB44 /* Pods_Smartle.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +64,6 @@
 		812CC22A20359862005AE3B0 /* SmartleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		812CC22E20359862005AE3B0 /* SmartTranslateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartTranslateUITests.swift; sourceTree = "<group>"; };
 		812CC23020359862005AE3B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8139ADEF240B97EE00F900F5 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		813EFEAB203711D20021FC49 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		813EFEAE203713D70021FC49 /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
 		814C44B820583167007E813F /* FavoritesVCFlagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVCFlagCell.swift; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		81F1C6BF206A99110027D2E7 /* Revision+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Revision+CoreDataClass.swift"; sourceTree = "<group>"; };
 		81F1C6C0206A99110027D2E7 /* Revision+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Revision+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		81FCF0BD240DA76100116116 /* Smartle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Smartle.entitlements; sourceTree = "<group>"; };
+		81FCF0E92412E1F600116116 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +193,7 @@
 			children = (
 				81ADD4E2203C7D030073AC54 /* ProcessingImage.swift */,
 				81F1C6BA206A95A60027D2E7 /* Smartle.xcdatamodeld */,
-				8139ADEF240B97EE00F900F5 /* Resnet50.mlmodel */,
+				81FCF0E92412E1F600116116 /* Resnet50.mlmodel */,
 				813EFEAE203713D70021FC49 /* Translation.swift */,
 				81243AEA203FFA8600123AF0 /* Countries.swift */,
 				81F1C6BD206A99110027D2E7 /* Main+CoreDataClass.swift */,
@@ -366,7 +366,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\n";
+			shellScript = "
+";
 		};
 		C9411C1A636CC20BD7E666B2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -400,7 +401,7 @@
 				81F1C6C3206A99110027D2E7 /* Revision+CoreDataClass.swift in Sources */,
 				81ADD4DD203C31590073AC54 /* FavoritesViewController.swift in Sources */,
 				81887217204047EF0066691D /* PhotosVCFlagCell.swift in Sources */,
-				8139ADF0240B97EE00F900F5 /* Resnet50.mlmodel in Sources */,
+				81FCF0EA2412E1F600116116 /* Resnet50.mlmodel in Sources */,
 				812CC21720359861005AE3B0 /* AppDelegate.swift in Sources */,
 				81ADD4DB203C31410073AC54 /* PhotosViewController.swift in Sources */,
 				8188720D20401DDD0066691D /* Helpers.swift in Sources */,
