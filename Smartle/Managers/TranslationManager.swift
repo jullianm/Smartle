@@ -20,7 +20,7 @@ class TranslationManager {
     }
     
     func translate(word textToTranslate: String, to language: String) {
-        let APIKey = "AIzaSyCNr2HbuFmf9c_HYOECHRemSotGbGcuMEs"
+        let APIKey = "YOUR_API_KEY"
         
         guard let url = URLComponents(string: "https://translation.googleapis.com/language/translate/v2") else {
             return
