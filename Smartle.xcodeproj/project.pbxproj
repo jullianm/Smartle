@@ -30,7 +30,6 @@
 		81F1C6C2206A99110027D2E7 /* Main+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C6BE206A99110027D2E7 /* Main+CoreDataProperties.swift */; };
 		81F1C6C3206A99110027D2E7 /* Revision+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C6BF206A99110027D2E7 /* Revision+CoreDataClass.swift */; };
 		81F1C6C4206A99110027D2E7 /* Revision+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C6C0206A99110027D2E7 /* Revision+CoreDataProperties.swift */; };
-		81FCF0EA2412E1F600116116 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 81FCF0E92412E1F600116116 /* Resnet50.mlmodel */; };
 		81FCF0F52412FCF600116116 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FCF0F42412FCF600116116 /* CoreDataManager.swift */; };
 		81FCF0F82413027E00116116 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FCF0F72413027E00116116 /* UIImage.swift */; };
 		81FCF0FA241309F000116116 /* UIPinchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FCF0F9241309EF00116116 /* UIPinchGestureRecognizer.swift */; };
@@ -94,7 +93,6 @@
 		81F1C6BF206A99110027D2E7 /* Revision+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Revision+CoreDataClass.swift"; sourceTree = "<group>"; };
 		81F1C6C0206A99110027D2E7 /* Revision+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Revision+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		81FCF0BD240DA76100116116 /* Smartle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Smartle.entitlements; sourceTree = "<group>"; };
-		81FCF0E92412E1F600116116 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		81FCF0F42412FCF600116116 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		81FCF0F72413027E00116116 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		81FCF0F9241309EF00116116 /* UIPinchGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPinchGestureRecognizer.swift; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 		81ADD4E4203EABB90073AC54 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				81FCF0E92412E1F600116116 /* Resnet50.mlmodel */,
 				81FCF1072413B07000116116 /* Translation.swift */,
 				81AD6C09206F5ADD0081708A /* RevisionsList.swift */,
 			);
@@ -490,7 +487,6 @@
 				81ADD4DD203C31590073AC54 /* FavoritesViewController.swift in Sources */,
 				81FCF10E2413B40D00116116 /* UITableView.swift in Sources */,
 				81FCF0FA241309F000116116 /* UIPinchGestureRecognizer.swift in Sources */,
-				81FCF0EA2412E1F600116116 /* Resnet50.mlmodel in Sources */,
 				812CC21720359861005AE3B0 /* AppDelegate.swift in Sources */,
 				81FCF1082413B07000116116 /* Translation.swift in Sources */,
 				81FCF10C2413B40600116116 /* String.swift in Sources */,
