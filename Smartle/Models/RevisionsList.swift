@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct RevisionsList {
+struct FavoritesList {
     var currentTranslation: String
     var favoritesItems: [UIImage]
     var favoritesLanguages: [String]

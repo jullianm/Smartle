@@ -10,12 +10,6 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-enum Error: Swift.Error {
-    case wrongURL
-    case decoding(Swift.Error)
-    case network(Swift.Error?)
-}
-
 class TranslationManager {
     static let shared = TranslationManager()
     
@@ -42,7 +36,6 @@ class TranslationManager {
                     .init(name: "key", value: APIKey),
                     .init(name: "format", value: "text")
                 ]
-                
                 return components.url
             }
             .ignoreNil()

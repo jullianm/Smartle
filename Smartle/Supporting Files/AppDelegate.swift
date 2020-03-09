@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         tabBarController = self.window!.rootViewController as? UITabBarController
         
+        _ = tabBarController?.viewControllers?[1].view
+        
         let cameraVC = tabBarController.viewControllers![0] as! CameraViewController
         
         cameraVC.coreDataManager.managedObjectContext = persistentContainer.viewContext

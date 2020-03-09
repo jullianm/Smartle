@@ -8,6 +8,6 @@
 
 import UIKit
 
-class CameraVCFlagCell: UICollectionViewCell {
-    @IBOutlet weak var cameraVCFlag: UIImageView!
+class FlagCell: UICollectionViewCell {
+    @IBOutlet weak var flag: UIImageView!
 }

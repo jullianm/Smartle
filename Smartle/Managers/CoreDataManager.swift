@@ -7,6 +7,8 @@
 //
 
 import CoreData
+import RxCocoa
+import RxSwift
 import UIKit
 
 class CoreDataManager {
@@ -14,6 +16,7 @@ class CoreDataManager {
     var revisionEntity: NSEntityDescription!
     var mainEntity: NSEntityDescription!
     
+    // MARK: - Main storage
     func saveMain() {
         let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         privateContext.persistentStoreCoordinator = managedObjectContext.persistentStoreCoordinator
@@ -26,6 +29,54 @@ class CoreDataManager {
             main.chosenLanguage = LanguageManager.shared.chosenLanguage
             self.saveContext()
         }
+    }
+    
+    func fetchMain() {
+        let storage = (try? managedObjectContext.fetch(Main.createFetchRequest())) ?? []
+        let manager = LanguageManager.shared
+        
+        storage.isEmpty ? manager.install(): manager.install(fromStorage: storage)
+    }
+    
+    func updateMain() {
+        let results = try? managedObjectContext.fetch(Main.createFetchRequest())
+        if results?.count == 0 {
+            saveMain()
+        } else {
+            results?.forEach { result in
+                result.favoritesItems = LanguageManager.shared.favoritesItems.data()
+                result.items = LanguageManager.shared.items.data()
+                result.favoritesLanguages = LanguageManager.shared.favoritesLanguages
+                result.languages = LanguageManager.shared.languages
+                result.chosenLanguage = LanguageManager.shared.chosenLanguage
+            }
+        }
+    }
+    
+    // MARK: - Revision storage
+    func fetchRevisions() -> [FavoritesList] {
+        let results = try? managedObjectContext.fetch(Revision.createFetchRequest()) 
+        
+        return results?
+            .map { result -> FavoritesList in
+                return FavoritesList(currentTranslation: result.currentTranslation,
+                                     favoritesItems: result.favoritesItems.uiImages(),
+                                     favoritesLanguages: result.favoritesLanguages,
+                                     items: result.items.uiImages(),
+                                     languages: result.languages,
+                                     originalTranslation: result.originalTranslation,
+                                     photo: UIImage(data: result.photo) ?? .init(),
+                                     selectedLanguage: result.selectedLanguage)
+            } ?? []
+    }
+    
+    func deleteRevision(atIndex index: Int) {
+        guard let results = try? managedObjectContext.fetch(Revision.createFetchRequest()), let index = results.enumerated().first(where: { $0.offset == index })?.offset else {
+            return
+        }
+        
+        managedObjectContext.delete(results[index])
+        saveContext()
     }
     
     func saveRevision(data: Data, translation: String) {
@@ -45,39 +96,8 @@ class CoreDataManager {
             self.saveContext()
         }
     }
-    
-    func fetchMain() {
-        let fetchRequest = Main.createFetchRequest()
-        do {
-            let fetchResults = try managedObjectContext.fetch(fetchRequest)
-            if fetchResults.isEmpty {
-                LanguageManager.shared.favoritesItems = [UIImage(named: "france")!, UIImage(named: "add_language")!]
-                LanguageManager.shared.items = [
-                    "spain", "germany", "italy", "china", "arabic", "great_britain", "israel", "japan",
-                    "portugal", "romania", "russia", "netherlands", "korea", "poland", "greece"
-                    ].compactMap(UIImage.init(named:))
-                LanguageManager.shared.favoritesLanguages = ["FR"]
-                LanguageManager.shared.languages = ["ES", "DE", "IT", "ZH", "AR", "EN", "HE", "JA", "PT", "RO", "RU", "NL", "KO", "PL", "EL"]
-                LanguageManager.shared.chosenLanguage = "FR"
-            } else {
-                for result in fetchResults {
-                    LanguageManager.shared.favoritesItems = result.favoritesItems.uiImages()
-                    LanguageManager.shared.items = result.items.uiImages()
-                    LanguageManager.shared.favoritesLanguages = result.favoritesLanguages
-                    LanguageManager.shared.languages = result.languages
-                    LanguageManager.shared.chosenLanguage = result.chosenLanguage
-                }
-            }
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
 
-    func saveContext() {
-        do {
-            try managedObjectContext.save()
-        } catch {
-            print(error.localizedDescription)
-        }
+    private func saveContext() {
+        try? managedObjectContext.save()
     }
 }

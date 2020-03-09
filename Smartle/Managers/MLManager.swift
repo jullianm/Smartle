@@ -15,7 +15,7 @@ import Vision
 class MLManager {
     static let shared = MLManager()
     typealias UserConfidence = Float
-    typealias Input = (UserConfidence, CMSampleBuffer)
+    typealias Input = (UserConfidence, CVPixelBuffer)
     
     let input = PublishRelay<Input>()
     let output = PublishRelay<String>()
@@ -27,11 +27,8 @@ class MLManager {
     }
     
     private func bindPrediction() {
-        input.bind(onNext: { [weak self] (confidence, sampleBuffer) in
-                guard
-                    let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer),
-                    let model = try? VNCoreMLModel(for: Resnet50().model) else {
-                        print("called")
+        input.bind(onNext: { [weak self] (confidence, pixelBuffer) in
+                guard let model = try? VNCoreMLModel(for: Resnet50().model) else {
                         self?.output.accept(.init())
                         return
                 }
@@ -49,5 +46,9 @@ class MLManager {
                 try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
         })
         .disposed(by: disposeBag)
+    }
+    
+    func setEmpty() {
+        output.accept(.init())
     }
 }

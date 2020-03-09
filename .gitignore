@@ -19,6 +19,7 @@ Design/
 Smartle_AppPreview.mp4
 ScreensAppstore/
 Smartle/Model/Resnet50.mlmodel
+Smartle.xcodeproj/xcshareddata/
 
 ## Various settings
 *.pbxuser
