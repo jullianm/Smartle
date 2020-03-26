@@ -398,12 +398,16 @@
                                     <constraint firstAttribute="height" constant="1" id="ima-dK-W3P"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5Y-Sq-fJL">
+                                <rect key="frame" x="0.0" y="95" width="375" height="309.33333333333331"/>
+                                <color key="backgroundColor" red="0.47450980392156861" green="0.34901960784313724" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lgA-ve-lKc">
                                 <rect key="frame" x="0.0" y="95" width="375" height="309.33333333333331"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pj2-h3-w3k">
                                 <rect key="frame" x="0.0" y="404.33333333333326" width="375" height="324.66666666666674"/>
-                                <color key="backgroundColor" red="0.4744480848" green="0.34885045889999999" blue="0.34748357530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.47450980392156861" green="0.34901960784313724" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewLayout key="collectionViewLayout" id="3hR-Qx-fKV" customClass="PhotosCollectionViewFlowLayout" customModule="Smartle" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photosCell" id="os4-0u-WAb" customClass="PhotosCell" customModule="Smartle" customModuleProvider="target">
@@ -472,13 +476,31 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPT-Ld-CFc">
+                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="DLH-Kb-8li">
+                                        <rect key="frame" x="169" y="324" width="37" height="37"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.47450980390000003" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="DLH-Kb-8li" firstAttribute="centerX" secondItem="QPT-Ld-CFc" secondAttribute="centerX" id="gN1-ue-dk5"/>
+                                    <constraint firstItem="DLH-Kb-8li" firstAttribute="centerY" secondItem="QPT-Ld-CFc" secondAttribute="centerY" id="oiK-Jh-YDV"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.95692783589999997" green="0.71791678670000003" blue="0.36174017190000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="QPT-Ld-CFc" firstAttribute="leading" secondItem="x9g-Xs-hab" secondAttribute="leading" id="0he-a8-QcW"/>
+                            <constraint firstItem="I5Y-Sq-fJL" firstAttribute="top" secondItem="yad-xH-tVQ" secondAttribute="bottom" id="25k-hM-qha"/>
                             <constraint firstItem="vS9-4F-euk" firstAttribute="width" secondItem="pj2-h3-w3k" secondAttribute="width" multiplier="0.5" id="2gx-fe-PeA"/>
+                            <constraint firstItem="I5Y-Sq-fJL" firstAttribute="centerX" secondItem="x9g-Xs-hab" secondAttribute="centerX" id="3Os-vq-Jsy"/>
                             <constraint firstItem="UJm-N4-b6N" firstAttribute="centerX" secondItem="vS9-4F-euk" secondAttribute="centerX" id="3W3-Gg-u02"/>
                             <constraint firstItem="fcf-wZ-KTZ" firstAttribute="trailing" secondItem="lgA-ve-lKc" secondAttribute="trailing" constant="-12" id="Aht-iL-HZW"/>
                             <constraint firstItem="i2f-aX-unI" firstAttribute="centerX" secondItem="x9g-Xs-hab" secondAttribute="centerX" id="CVN-K3-Yye"/>
+                            <constraint firstItem="x9g-Xs-hab" firstAttribute="trailing" secondItem="QPT-Ld-CFc" secondAttribute="trailing" id="CpM-ox-4Lc"/>
                             <constraint firstItem="x9g-Xs-hab" firstAttribute="bottom" secondItem="t9b-Qo-apy" secondAttribute="bottom" id="EQe-SQ-Qgx"/>
                             <constraint firstItem="x9g-Xs-hab" firstAttribute="bottom" secondItem="pj2-h3-w3k" secondAttribute="bottom" id="Edl-2Y-X8c"/>
                             <constraint firstItem="lgA-ve-lKc" firstAttribute="centerX" secondItem="x9g-Xs-hab" secondAttribute="centerX" id="I70-cB-boN"/>
@@ -489,6 +511,8 @@
                             <constraint firstItem="yad-xH-tVQ" firstAttribute="top" secondItem="i2f-aX-unI" secondAttribute="bottom" id="QA4-JV-eBN"/>
                             <constraint firstItem="gPH-bc-XJg" firstAttribute="top" secondItem="i2f-aX-unI" secondAttribute="bottom" multiplier="1.006" id="VMN-ol-7bb"/>
                             <constraint firstItem="yad-xH-tVQ" firstAttribute="width" secondItem="i2f-aX-unI" secondAttribute="width" id="Wv7-5V-Tbo"/>
+                            <constraint firstItem="lgA-ve-lKc" firstAttribute="bottom" secondItem="I5Y-Sq-fJL" secondAttribute="bottom" id="X5F-md-KMD"/>
+                            <constraint firstItem="I5Y-Sq-fJL" firstAttribute="width" secondItem="lgA-ve-lKc" secondAttribute="width" id="ZXl-h3-q6c"/>
                             <constraint firstItem="lgA-ve-lKc" firstAttribute="top" secondItem="yad-xH-tVQ" secondAttribute="bottom" id="axb-pc-g8B"/>
                             <constraint firstItem="i2f-aX-unI" firstAttribute="top" secondItem="x9g-Xs-hab" secondAttribute="top" id="bPg-V9-rJU"/>
                             <constraint firstItem="pj2-h3-w3k" firstAttribute="top" secondItem="lgA-ve-lKc" secondAttribute="bottom" id="cAu-9k-O32"/>
@@ -498,6 +522,8 @@
                             <constraint firstItem="pj2-h3-w3k" firstAttribute="width" secondItem="WEL-p3-ygg" secondAttribute="width" id="gGs-K6-DfH"/>
                             <constraint firstItem="i2f-aX-unI" firstAttribute="width" secondItem="WEL-p3-ygg" secondAttribute="width" id="lzN-UK-1E8"/>
                             <constraint firstItem="pj2-h3-w3k" firstAttribute="top" secondItem="vS9-4F-euk" secondAttribute="bottom" constant="15" id="nsg-ji-OML"/>
+                            <constraint firstItem="x9g-Xs-hab" firstAttribute="bottom" secondItem="QPT-Ld-CFc" secondAttribute="bottom" id="sH0-jB-KwX"/>
+                            <constraint firstItem="QPT-Ld-CFc" firstAttribute="top" secondItem="x9g-Xs-hab" secondAttribute="top" id="v9q-8Z-j9b"/>
                             <constraint firstItem="yad-xH-tVQ" firstAttribute="centerX" secondItem="i2f-aX-unI" secondAttribute="centerX" id="vQr-k3-ptk"/>
                             <constraint firstItem="lgA-ve-lKc" firstAttribute="width" secondItem="WEL-p3-ygg" secondAttribute="width" id="vng-nm-Zkr"/>
                             <constraint firstItem="UJm-N4-b6N" firstAttribute="width" secondItem="vS9-4F-euk" secondAttribute="width" multiplier="0.5" id="xV6-p7-2mh"/>
@@ -513,10 +539,12 @@
                         <outlet property="confidenceSlider" destination="vS9-4F-euk" id="SRk-Tw-Ty7"/>
                         <outlet property="container" destination="gPH-bc-XJg" id="7OF-nV-hY0"/>
                         <outlet property="favorites" destination="fcf-wZ-KTZ" id="Ptt-rJ-Y1V"/>
-                        <outlet property="loader" destination="IIe-lr-vms" id="u8e-dK-gfb"/>
+                        <outlet property="mainLoader" destination="IIe-lr-vms" id="V3Q-v6-FCw"/>
                         <outlet property="photoGallery" destination="pj2-h3-w3k" id="JVB-p7-gSd"/>
                         <outlet property="previewImage" destination="lgA-ve-lKc" id="4uA-nD-Hpd"/>
+                        <outlet property="temporaryLoader" destination="DLH-Kb-8li" id="BtA-ed-3fA"/>
                         <outlet property="titleView" destination="i2f-aX-unI" id="OsJ-l4-0Od"/>
+                        <outlet property="waitingLoaderView" destination="QPT-Ld-CFc" id="PUZ-Ud-s2Y"/>
                         <outletCollection property="separatorLineConstraints" destination="ima-dK-W3P" collectionClass="NSMutableArray" id="5GV-Jk-vpC"/>
                         <outletCollection property="separatorLineConstraints" destination="6KI-LC-KyV" collectionClass="NSMutableArray" id="UGs-CV-YIm"/>
                     </connections>

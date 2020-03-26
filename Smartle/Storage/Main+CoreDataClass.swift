@@ -11,6 +11,4 @@ import Foundation
 import CoreData
 
 @objc(Main)
-public class Main: NSManagedObject {
-
-}
+public class Main: NSManagedObject { }

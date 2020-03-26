@@ -10,9 +10,7 @@
 import Foundation
 import CoreData
 
-
 extension Revision {
-
     @nonobjc public class func createFetchRequest() -> NSFetchRequest<Revision> {
         let fetchRequest = NSFetchRequest<Revision>(entityName: "Revision")
         fetchRequest.returnsObjectsAsFaults = false
@@ -29,6 +27,5 @@ extension Revision {
     @NSManaged public var originalTranslation: String
     @NSManaged public var photo: Data
     @NSManaged public var selectedLanguage: String
-
 }
 

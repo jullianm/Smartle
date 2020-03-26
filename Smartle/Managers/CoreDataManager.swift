@@ -7,11 +7,13 @@
 //
 
 import CoreData
-import RxCocoa
-import RxSwift
 import UIKit
 
 class CoreDataManager {
+    static let shared = CoreDataManager()
+    
+    private init() { }
+    
     var managedObjectContext: NSManagedObjectContext!
     var revisionEntity: NSEntityDescription!
     var mainEntity: NSEntityDescription!
@@ -53,8 +55,8 @@ class CoreDataManager {
         }
     }
     
-    // MARK: - Revision storage
-    func fetchRevisions() -> [FavoritesList] {
+    // MARK: - Favorites storage
+    func fetchFavorites() -> [FavoritesList] {
         let results = try? managedObjectContext.fetch(Revision.createFetchRequest()) 
         
         return results?
@@ -70,18 +72,34 @@ class CoreDataManager {
             } ?? []
     }
     
-    func deleteRevision(atIndex index: Int) {
-        guard let results = try? managedObjectContext.fetch(Revision.createFetchRequest()), let index = results.enumerated().first(where: { $0.offset == index })?.offset else {
-            return
+    func updateFavorites(with translation: String, and list: FavoritesList, for index: Int) {
+        guard let results = try? managedObjectContext.fetch(Revision.createFetchRequest()) else { return }
+        
+        results[index].currentTranslation = translation
+        results[index].favoritesLanguages = list.favoritesLanguages
+        results[index].selectedLanguage = list.selectedLanguage
+        results[index].favoritesItems = list.favoritesItems.data()
+        results[index].items = list.items.data()
+        results[index].languages = list.languages
+        results[index].currentTranslation = translation
+        results[index].originalTranslation = translation
+    }
+    
+    func deleteFavorite(at index: Int) {
+        guard
+            let results = try? managedObjectContext.fetch(Revision.createFetchRequest()),
+            let index = results.enumerated().first(where: { $0.offset == index })?.offset else {
+                return
         }
         
         managedObjectContext.delete(results[index])
         saveContext()
     }
     
-    func saveRevision(data: Data, translation: String) {
+    func saveFavorite(data: Data, translation: String) {
         let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         privateContext.persistentStoreCoordinator = managedObjectContext.persistentStoreCoordinator
+        
         privateContext.perform {
             let revision = Revision(entity: self.revisionEntity, insertInto: self.managedObjectContext)
             revision.photo = data
@@ -96,7 +114,7 @@ class CoreDataManager {
             self.saveContext()
         }
     }
-
+    
     private func saveContext() {
         try? managedObjectContext.save()
     }

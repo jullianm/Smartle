@@ -14,9 +14,9 @@ extension UIView {
             self.transform = .identity
         }, completion: nil)
     }
-    func animateWithAlpha() {
-        UIView.animate(withDuration: 0.5, delay: 0, options: .allowUserInteraction, animations: {
-            self.alpha = 1
+    func animateWithAlpha(duration: Double = 0.5, alpha: CGFloat = 1.0) {
+        UIView.animate(withDuration: duration, delay: 0, options: .allowUserInteraction, animations: {
+            self.alpha = alpha
         }, completion: nil)
     }
 }

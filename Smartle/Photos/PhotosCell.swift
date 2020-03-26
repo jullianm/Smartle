@@ -9,6 +9,19 @@
 import UIKit
 
 class PhotosCell: UICollectionViewCell {
-    @IBOutlet weak var photo: UIImageView!
+    @IBOutlet var photo: UIImageView!
     @IBOutlet weak var alphaView: UIView!
+    
+    var representedAssetIdentifier: String!
+    
+    var thumbnailImage: UIImage! {
+        didSet {
+            photo.image = thumbnailImage
+        }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        photo.image = nil
+    }
 }

@@ -42,9 +42,6 @@ class CameraViewController: BaseViewController, UIApplicationDelegate {
     private lazy var photoOutputSettings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
     private var lastZoomFactor: CGFloat = 1.0
     
-    // MARK: - Storage
-    var coreDataManager = CoreDataManager()
-    
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,7 +95,7 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate, AVCaptureVideoDat
             let data = photo.fileDataRepresentation(),
             let translation = bubbleView.translatedText.text else { return }
         
-        coreDataManager.saveRevision(data: data, translation: translation)
+        coreDataManager.saveFavorite(data: data, translation: translation)
     }
     
     

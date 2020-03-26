@@ -15,11 +15,13 @@
 		812CC22120359861005AE3B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 812CC22020359861005AE3B0 /* Assets.xcassets */; };
 		812CC22420359861005AE3B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 812CC22220359861005AE3B0 /* LaunchScreen.storyboard */; };
 		812CC22F20359862005AE3B0 /* SmartTranslateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812CC22E20359862005AE3B0 /* SmartTranslateUITests.swift */; };
+		813639B72423AEEC00D32E67 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813639B62423AEEC00D32E67 /* UICollectionView.swift */; };
+		813639B92423AF2E00D32E67 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813639B82423AF2E00D32E67 /* CGRect.swift */; };
 		813EFEAF203713D70021FC49 /* TranslationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813EFEAE203713D70021FC49 /* TranslationManager.swift */; };
 		818872132040474B0066691D /* FlagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818872112040474B0066691D /* FlagCell.swift */; };
 		818872142040474B0066691D /* FlagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 818872122040474B0066691D /* FlagCell.xib */; };
 		81A09B68217D1DE2006FEB0C /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A09B67217D1DE2006FEB0C /* Animator.swift */; };
-		81AD6C0A206F5ADD0081708A /* RevisionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AD6C09206F5ADD0081708A /* RevisionsList.swift */; };
+		81AD6C0A206F5ADD0081708A /* FavoritesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AD6C09206F5ADD0081708A /* FavoritesList.swift */; };
 		81ADD4D9203C30450073AC54 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ADD4D8203C30450073AC54 /* CameraViewController.swift */; };
 		81ADD4DB203C31410073AC54 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ADD4DA203C31410073AC54 /* PhotosViewController.swift */; };
 		81ADD4DD203C31590073AC54 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ADD4DC203C31590073AC54 /* FavoritesViewController.swift */; };
@@ -76,12 +78,14 @@
 		812CC22A20359862005AE3B0 /* SmartleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		812CC22E20359862005AE3B0 /* SmartTranslateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartTranslateUITests.swift; sourceTree = "<group>"; };
 		812CC23020359862005AE3B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		813639B62423AEEC00D32E67 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		813639B82423AF2E00D32E67 /* CGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		813EFEAB203711D20021FC49 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		813EFEAE203713D70021FC49 /* TranslationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationManager.swift; sourceTree = "<group>"; };
 		818872112040474B0066691D /* FlagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagCell.swift; sourceTree = "<group>"; };
 		818872122040474B0066691D /* FlagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlagCell.xib; sourceTree = "<group>"; };
 		81A09B67217D1DE2006FEB0C /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
-		81AD6C09206F5ADD0081708A /* RevisionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionsList.swift; sourceTree = "<group>"; };
+		81AD6C09206F5ADD0081708A /* FavoritesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesList.swift; sourceTree = "<group>"; };
 		81ADD4D8203C30450073AC54 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		81ADD4DA203C31410073AC54 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		81ADD4DC203C31590073AC54 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
@@ -213,7 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				81FCF1072413B07000116116 /* Translation.swift */,
-				81AD6C09206F5ADD0081708A /* RevisionsList.swift */,
+				81AD6C09206F5ADD0081708A /* FavoritesList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -281,6 +285,8 @@
 				81FCF10D2413B40D00116116 /* UITableView.swift */,
 				81FCF10F2413B42300116116 /* UIView.swift */,
 				81FCF1112413B42D00116116 /* Array.swift */,
+				813639B62423AEEC00D32E67 /* UICollectionView.swift */,
+				813639B82423AF2E00D32E67 /* CGRect.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -478,6 +484,7 @@
 				81FCF11824140E7D00116116 /* BaseViewController.swift in Sources */,
 				812C4E77204BE3E70007378B /* FavoriteCell.swift in Sources */,
 				81FCF0F82413027E00116116 /* UIImage.swift in Sources */,
+				813639B92423AF2E00D32E67 /* CGRect.swift in Sources */,
 				81ADD4DF203C5A590073AC54 /* PhotosCell.swift in Sources */,
 				818872132040474B0066691D /* FlagCell.swift in Sources */,
 				81FCF1122413B42D00116116 /* Array.swift in Sources */,
@@ -495,12 +502,13 @@
 				81FCF1002413135100116116 /* MLManager.swift in Sources */,
 				81F1C6C1206A99110027D2E7 /* Main+CoreDataClass.swift in Sources */,
 				81A09B68217D1DE2006FEB0C /* Animator.swift in Sources */,
-				81AD6C0A206F5ADD0081708A /* RevisionsList.swift in Sources */,
+				81AD6C0A206F5ADD0081708A /* FavoritesList.swift in Sources */,
 				81F1C6C4206A99110027D2E7 /* Revision+CoreDataProperties.swift in Sources */,
 				81ADD4E3203C7D030073AC54 /* ImageManager.swift in Sources */,
 				81FCF11C2414103400116116 /* Bubble.swift in Sources */,
 				81F1C6BC206A95A60027D2E7 /* Smartle.xcdatamodeld in Sources */,
 				813EFEAF203713D70021FC49 /* TranslationManager.swift in Sources */,
+				813639B72423AEEC00D32E67 /* UICollectionView.swift in Sources */,
 				81FCF0FE2413110100116116 /* ObservableType.swift in Sources */,
 				81FCF10A2413B3C100116116 /* AVCaptureSession.swift in Sources */,
 				81243AEB203FFA8600123AF0 /* LanguageManager.swift in Sources */,
@@ -665,12 +673,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Smartle/Smartle.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 43UT2JSNMP;
 				INFOPLIST_FILE = "$(SRCROOT)/Smartle/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jullianm.Smartle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = SmartleDev;
@@ -688,12 +696,12 @@
 				CODE_SIGN_ENTITLEMENTS = Smartle/Smartle.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 43UT2JSNMP;
 				INFOPLIST_FILE = "$(SRCROOT)/Smartle/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jullianm.Smartle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = SmartleUniversal;

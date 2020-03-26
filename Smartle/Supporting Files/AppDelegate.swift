@@ -17,22 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         tabBarController = self.window!.rootViewController as? UITabBarController
         
-        _ = tabBarController?.viewControllers?[1].view
-        
-        let cameraVC = tabBarController.viewControllers![0] as! CameraViewController
-        
-        cameraVC.coreDataManager.managedObjectContext = persistentContainer.viewContext
-        cameraVC.coreDataManager.mainEntity = NSEntityDescription.entity(forEntityName: "Main", in: persistentContainer.viewContext)
-        cameraVC.coreDataManager.revisionEntity = NSEntityDescription.entity(forEntityName: "Revision", in: persistentContainer.viewContext)
-        
-        let photosVC = tabBarController.viewControllers![1] as! PhotosViewController
-        photosVC.coreDataManager.managedObjectContext = persistentContainer.viewContext
-        photosVC.coreDataManager.revisionEntity = NSEntityDescription.entity(forEntityName: "Revision", in: persistentContainer.viewContext)
-        
-        let favoritesVC = tabBarController.viewControllers![2] as! FavoritesViewController
-        favoritesVC.coreDataManager.managedObjectContext = persistentContainer.viewContext
-        favoritesVC.coreDataManager.revisionEntity = NSEntityDescription.entity(forEntityName: "Revision", in: persistentContainer.viewContext)
-        
+        CoreDataManager.shared.managedObjectContext = persistentContainer.viewContext
+        CoreDataManager.shared.mainEntity = NSEntityDescription.entity(forEntityName: "Main", in: persistentContainer.viewContext)
+        CoreDataManager.shared.revisionEntity = NSEntityDescription.entity(forEntityName: "Revision", in: persistentContainer.viewContext)
+                
         return true
 
     }
@@ -66,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
                  * The store could not be migrated to the current model version.
                  Check the error message to determine what the actual problem was.
                  */
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+//                fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
         return container
@@ -77,15 +65,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
+            try? context.save()
         }
     }
 
 }
+

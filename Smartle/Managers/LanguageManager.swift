@@ -95,8 +95,8 @@ extension LanguageManager {
     
     func favoriteLanguageIndex() -> Int {
         return favoritesLanguages
-        .enumerated()
-        .first(where: { $0.element == chosenLanguage })?
-        .offset ?? 0
+            .enumerated()
+            .first(where: { $0.element == chosenLanguage })?
+            .offset ?? 0
     }
 }

@@ -13,24 +13,30 @@ import RxSwift
 import Vision
 
 class MLManager {
-    static let shared = MLManager()
     typealias UserConfidence = Float
     typealias Input = (UserConfidence, CVPixelBuffer)
     
     let input = PublishRelay<Input>()
-    let output = PublishRelay<String>()
+    private let _output = PublishRelay<String>()
+    var output: Observable<String> {
+        return _output.asObservable()
+            .distinctUntilChanged()
+            .filter { !$0.isEmpty }
+    }
     
     private var disposeBag = DisposeBag()
     
-    private init() {
+    init() {
         bindPrediction()
     }
     
     private func bindPrediction() {
-        input.bind(onNext: { [weak self] (confidence, pixelBuffer) in
+        input
+            .throttle(.milliseconds(350), scheduler: MainScheduler.instance)
+            .bind(onNext: { [weak self] (confidence, pixelBuffer) in
                 guard let model = try? VNCoreMLModel(for: Resnet50().model) else {
-                        self?.output.accept(.init())
-                        return
+                    self?._output.accept(.init())
+                    return
                 }
                 
                 let request = VNCoreMLRequest(model: model) { success, error in
@@ -40,15 +46,15 @@ class MLManager {
                     
                     if firstObservation.confidence > confidence {
                         let prediction = firstObservation.identifier.components(separatedBy: ",")[0].capitalizingFirstLetter()
-                        self?.output.accept(prediction)
+                        self?._output.accept(prediction)
                     }
                 }
                 try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
-        })
-        .disposed(by: disposeBag)
+            })
+            .disposed(by: disposeBag)
     }
     
-    func setEmpty() {
-        output.accept(.init())
+    func reset() {
+        _output.accept(.init())
     }
 }

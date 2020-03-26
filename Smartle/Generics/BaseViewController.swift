@@ -41,6 +41,12 @@ class BaseViewController: UIViewController {
     var disposeBag = DisposeBag()
     var wordToTranslate = BehaviorRelay<String>(value: .init())
     var onTranslationDisplayed: (() -> Void)?
+    
+    // Managers
+    var coreDataManager = CoreDataManager.shared
+    var translationManager = TranslationManager.shared
+    var languageManager = LanguageManager.shared
+    var machineLearningManager = MLManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,25 +66,25 @@ class BaseViewController: UIViewController {
         super.viewDidAppear(animated)
         collectionView.reloadData()
 
-        let index = LanguageManager.shared.favoriteLanguageIndex()
+        let index = languageManager.favoriteLanguageIndex()
         
         bubbleView.languagesPicker.selectRow(index, inComponent: 0, animated: false)
         selectedRow = index
     }
     
     override func viewDidLayoutSubviews() {
-        bubbleView.collectionViewBubble.frame = CGRect(x: bubbleView.bubbleImageView.frame.origin.x,
-                                         y: bubbleView.bubbleImageView.frame.origin.y,
-                                         width: bubbleView.bubbleImageView.frame.width,
-                                         height: bubbleView.bubbleImageView.frame.height)
+        bubbleView.collectionViewBubble.frame = .init(x: bubbleView.bubbleImageView.frame.origin.x,
+                                                      y: bubbleView.bubbleImageView.frame.origin.y,
+                                                      width: bubbleView.bubbleImageView.frame.width,
+                                                      height: bubbleView.bubbleImageView.frame.height)
         
-        collectionView.frame = CGRect(x: bubbleView.collectionViewBubble.bounds.midX,
-                                      y: bubbleView.collectionViewBubble.bounds.midY,
-                                      width: bubbleView.collectionViewBubble.bounds.width/1.5,
-                                      height: bubbleView.collectionViewBubble.bounds.height/2)
+        collectionView.frame = .init(x: bubbleView.collectionViewBubble.bounds.midX,
+                                     y: bubbleView.collectionViewBubble.bounds.midY,
+                                     width: bubbleView.collectionViewBubble.bounds.width/1.5,
+                                     height: bubbleView.collectionViewBubble.bounds.height/2)
         
-        collectionView.center = CGPoint(x: bubbleView.collectionViewBubble.bounds.midX,
-                                        y: bubbleView.collectionViewBubble.bounds.midY)
+        collectionView.center = .init(x: bubbleView.collectionViewBubble.bounds.midX,
+                                      y: bubbleView.collectionViewBubble.bounds.midY)
     }
     
     private func setupBindings() {
@@ -90,25 +96,39 @@ class BaseViewController: UIViewController {
         setupDeleteItem()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if bubbleView.collectionViewBubble.isUserInteractionEnabled == true {
+            bubbleView.languagesPicker.selectRow(selectedRow, inComponent: 0, animated: false)
+            bubbleView.collectionViewBubble.alpha = 0
+            bubbleView.collectionViewBubble.isUserInteractionEnabled = false
+            bubbleView.languagesPicker.isUserInteractionEnabled = true
+        }
+    }
+}
+
+extension BaseViewController {
     private func setupPickerView() {
         bubbleView.onPickerItemSelected = { [weak self] row in
             guard let self = self else { return }
             
-            if row == LanguageManager.shared.favoritesItems.count-1 {
-                !LanguageManager.shared.items.isEmpty ? self.displayLanguagesMenu(): self.displayEmptyText()
+            if row == self.languageManager.favoritesItems.count-1 {
+                !self.languageManager.items.isEmpty ? self.displayLanguagesMenu(): self.displayEmptyText()
             } else {
                 self.selectedRow = row
                 
-                LanguageManager.shared.chosenLanguage = LanguageManager.shared.favoritesLanguages[row]
-                TranslationManager.shared.translate(word: self.wordToTranslate.value, to: LanguageManager.shared.chosenLanguage)
+                self.languageManager.chosenLanguage = self.languageManager.favoritesLanguages[row]
+                self.translationManager.translate(word: self.wordToTranslate.value,
+                                                  to: self.languageManager.chosenLanguage)
             }
         }
     }
         
     private func setupCollectionView() {
-        LanguageManager.shared.collectionViewDataSource
-            .bind(to: collectionView.rx.items(cellIdentifier: "flagCell", cellType: FlagCell.self)) { index, model, cell in
-                cell.flag.image = LanguageManager.shared.items[index]
+        languageManager.collectionViewDataSource
+            .bind(to: collectionView.rx.items(cellIdentifier: "flagCell", cellType: FlagCell.self)) { [weak self] index, model, cell in
+                guard let self = self else { return }
+                
+                cell.flag.image = self.languageManager.items[index]
             }.disposed(by: disposeBag)
         
         collectionView.rx.itemSelected
@@ -122,7 +142,7 @@ class BaseViewController: UIViewController {
                 self.selectedRow = self.bubbleView.languagesPicker.selectedRow(inComponent: 0)
                 self.collectionView.reloadData()
                 
-                TranslationManager.shared.translate(word: self.wordToTranslate.value, to: LanguageManager.shared.chosenLanguage)
+                self.translationManager.translate(word: self.wordToTranslate.value, to: LanguageManager.shared.chosenLanguage)
                 
             }).disposed(by: disposeBag)
     }
@@ -133,7 +153,7 @@ class BaseViewController: UIViewController {
                 guard let self = self else { return }
                 
                 if self.bubbleView.languagesPicker.selectedRow(inComponent: 0) !=
-                    LanguageManager.shared.favoritesItems.count-1 &&
+                    self.languageManager.favoritesItems.count-1 &&
                     self.bubbleView.languagesPicker.numberOfRows(inComponent: 0) > 2 {
                     
                     let row = self.bubbleView.languagesPicker.selectedRow(inComponent: 0)
@@ -146,7 +166,7 @@ class BaseViewController: UIViewController {
                         LanguageManager.shared.chosenLanguage = LanguageManager.shared.favoritesLanguages[0]
                     }
                     
-                    TranslationManager.shared.translate(word: self.wordToTranslate.value, to: LanguageManager.shared.chosenLanguage)
+                    self.translationManager.translate(word: self.wordToTranslate.value, to: self.languageManager.chosenLanguage)
                     
                     self.bubbleView.languagesPicker.reloadAllComponents()
                     self.collectionView.reloadData()
@@ -171,21 +191,21 @@ extension BaseViewController {
     private func setupMLInput() {
         didCaptureOutput
             .map { (self.userConfidence.value, $0) }
-            .bind(to: MLManager.shared.input)
+            .bind(to: machineLearningManager.input)
             .disposed(by: disposeBag)
     }
     
     private func setupMLOutput() {
-        MLManager.shared.output
-            .distinctUntilChanged()
+        machineLearningManager.output
             .do(onNext: { [weak self] in self?.wordToTranslate.accept($0) })
-            .bind(onNext: { str in
-                TranslationManager.shared.translate(word: str, to: LanguageManager.shared.chosenLanguage)
+            .bind(onNext: { [weak self] str in
+                guard let self = self else { return }
+                self.translationManager.translate(word: str, to: self.languageManager.chosenLanguage)
             }).disposed(by: disposeBag)
     }
     
     func setupTranslation() {
-        TranslationManager.shared.translation
+        translationManager.translation
             .do(onNext: { [weak self] _ in
                 self?.onTranslationDisplayed?()
             })

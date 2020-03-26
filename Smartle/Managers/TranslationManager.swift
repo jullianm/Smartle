@@ -12,11 +12,14 @@ import RxSwift
 
 class TranslationManager {
     static let shared = TranslationManager()
+
+    private let errorMessage = "An error occured."
     
     private var disposeBag = DisposeBag()
     private var _translation = PublishRelay<String>()
     var translation: Driver<String> {
-        return _translation.asDriver(onErrorJustReturn: .init())
+        return _translation
+            .asDriver(onErrorJustReturn: errorMessage)
     }
     
     func translate(word textToTranslate: String, to language: String) {
@@ -29,7 +32,7 @@ class TranslationManager {
         Observable.just(url)
             .map { urlComponents -> URL? in
                 var components = urlComponents
-                
+                                
                 components.queryItems = [
                     .init(name: "q", value: textToTranslate),
                     .init(name: "target", value: "\(language)"),
@@ -47,7 +50,8 @@ class TranslationManager {
             }
             .decode(model: Translation.self)
             .map { $0.data.translations[0].translatedText }
-            .subscribeOn(MainScheduler.instance)
+            .observeOn(MainScheduler.instance)
+            .catchErrorJustReturn(errorMessage)
             .bind(to: _translation)
             .disposed(by: disposeBag)
     }
