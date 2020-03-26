@@ -4,7 +4,7 @@
 
 **What is Smartle?**
 
-Smartle is a machine-learning technology based app that makes words prediction based on what you see. 
+Smartle is a machine-learning technology based iOS app that makes words prediction based on what you see.
 
 **How does it work?**
 
@@ -26,6 +26,11 @@ Smartle is a machine-learning technology based app that makes words prediction b
 - Photos 
 - CoreData
 - Alamofire
+
+_Reactive Programming Stack_
+- RxSwift 
+- RxCocoa
+- RxDataSources
 
 **Trained Model**
 
